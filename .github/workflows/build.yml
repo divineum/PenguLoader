@@ -45,6 +45,12 @@ jobs:
           echo "SHORT_SHA=`git rev-parse --short HEAD`" >> $GITHUB_ENV
           echo "APP_VERSION=`node -p "require('./loader/package.json').version"`" >> $GITHUB_ENV
 
+      - name: Install Rust targets for macOS universal build
+        if: runner.os == 'macOS'
+        run: |
+          rustup target add aarch64-apple-darwin
+          rustup target add x86_64-apple-darwin
+
       - name: Setup MSBuild
         if: runner.os == 'Windows'
         uses: microsoft/setup-msbuild@v2
