@@ -28,6 +28,10 @@ jobs:
             os: macos-latest
             shell: sh
             tauri_args: --target universal-apple-darwin
+          - platform: macos-12
+            os: macos-12
+            shell: sh
+            tauri_args: --target universal-apple-darwin
 
     steps:
       - name: Checkout repository
