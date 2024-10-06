@@ -4,6 +4,7 @@ on:
       - main
       - dev
       - release/*
+      - feat/loader
   workflow_dispatch:
 
 jobs:
