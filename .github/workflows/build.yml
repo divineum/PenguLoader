@@ -4,6 +4,7 @@ on:
       - main
       - dev
       - release/*
+      - test
   workflow_dispatch:
 
 jobs:
